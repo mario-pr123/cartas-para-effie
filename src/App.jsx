@@ -142,7 +142,7 @@ export default function App() {
         </div>
         <h1>Cartas para <em>Effie</em></h1>
         <p className="lede">
-          Effie, hace un mes te encontré en Habbo y desde entonces no hemos dejado de hablar. Hice esta página para conocerte
+          Effie, mi amor, hace un mes te encontré en Habbo y desde entonces no hemos dejado de hablar. Hice esta página para conocerte
           un poquito más en nuestra primera cita. Sacamos una carta a la vez y los dos vemos la misma. Si alguna no te gusta,
           la pasamos sin explicar nada.
         </p>

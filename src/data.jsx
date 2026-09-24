@@ -2,13 +2,14 @@
 // Edita aquí preguntas, mazos y la ficha de Effie.
 
 export const HIM = "Mario";
-export const HABBO_NAME = ".eff!e";
+export const HABBO_NAME = ".eff!e.";
 export const MET = new Date(2026, 7, 24); // 24 de agosto de 2026, en Habbo
 
 export const DECKS = {
   peli:     { name: "Orgullo y prejuicio", color: "var(--mint)" },
   habbo:    { name: "Hotel Habbo",         color: "var(--lilac)" },
   musica:   { name: "Música y tacones",    color: "var(--blush)" },
+  natura:   { name: "Hongos y caballos",   color: "var(--moss)" },
   tauro:    { name: "Muy tauro",           color: "var(--butter)" },
   aula:     { name: "Profe Effie",         color: "var(--sky)" },
   hogar:    { name: "Niebla y raíces",     color: "var(--peach)" },
@@ -25,7 +26,6 @@ export const LEVELS = { ligera: "Ligera", media: "Media", profunda: "Profunda" }
 //   adivinaE → Mario adivina algo de Effie
 //   adivinaM → Effie adivina algo de Mario
 //   reto     → mini reto para hacer en la llamada
-// clave (opcional) → enlaza la carta desde "Por descubrir"
 const RAW = [
   // Orgullo y prejuicio (después de verla juntos)
   ["peli", "ligera", "ambos", "Después de verla juntos: ¿qué escena te gustó más esta vez?"],
@@ -36,48 +36,59 @@ const RAW = [
   ["peli", "profunda", "ambos", "¿Qué gesto pequeño, como la mano de Darcy, te parece más romántico que una gran declaración?"],
   ["peli", "media", "ambos", "¿Qué libro le recomendarías al otro para que te conozca mejor?", "libro"],
   ["peli", "ligera", "effie", "¿Qué libros te atrapan? ¿Qué leías en tus videos de TikTok?", "generos"],
-  ["peli", "ligera", "adivinaM", "¿Qué personaje crees que le cayó mejor a Mario?"],
+  ["peli", "ligera", "adivinaM", "¿Qué personaje crees que me cayó mejor a mí?"],
   ["peli", "ligera", "reto", "Declárense como Darcy bajo la lluvia, en una sola frase y con acento inglés."],
 
   // Hotel Habbo
   ["habbo", "ligera", "ambos", "¿Qué fue lo primero que pensaste del otro cuando se cruzaron en Habbo?"],
-  ["habbo", "ligera", "effie", "¿Por qué .eff!e? ¿Cómo elegiste tu nombre en el hotel?", "nombre"],
+  ["habbo", "ligera", "effie", "¿Por qué .eff!e.? ¿Cómo elegiste tu nombre en el hotel?"],
   ["habbo", "ligera", "effie", "¿Cuál ha sido tu keko favorito de todos los que has creado? Descríbelo como un look de pasarela.", "keko"],
   ["habbo", "ligera", "effie", "Zana o kick moderno: ¿qué te engancha? ¿Juegas para ganar o para reírte?"],
   ["habbo", "ligera", "ambos", "Si hoy armaras una sala que te represente, ¿cómo sería? ¿Qué mueble no puede faltar?"],
   ["habbo", "ligera", "ambos", "¿Cuál es tu recuerdo más gracioso o más raro dentro del hotel?"],
   ["habbo", "media", "ambos", "¿Cómo le contarías nuestra primera conversación a alguien que nunca ha jugado Habbo?"],
   ["habbo", "profunda", "ambos", "¿Hay algo que se sienta más fácil de decir detrás de un keko o una llamada que en persona?"],
-  ["habbo", "ligera", "adivinaE", "¿Qué color crees que domina los looks de .eff!e?"],
+  ["habbo", "ligera", "adivinaE", "¿Qué color crees que domina los looks de .eff!e.?"],
   ["habbo", "ligera", "reto", "Cada uno se arma un keko nuevo en 5 minutos inspirado en el otro. Luego se lo presentan."],
-  ["habbo", "ligera", "reto", "Armen una sala juntos en 10 minutos. Effie elige el tema y Mario pone los muebles que ella diga."],
+  ["habbo", "ligera", "reto", "Armen una sala juntos en 10 minutos. Tú eliges el tema y yo pongo los muebles que me digas."],
 
   // Música y tacones
   ["musica", "ligera", "effie", "¿Cómo fue el concierto de The Weeknd? Cuéntalo desde que llegaste.", "weeknd"],
   ["musica", "ligera", "adivinaE", "¿Qué canción de The Weeknd crees que Effie pondría en repeat?"],
-  ["musica", "ligera", "adivinaM", "¿Qué canción de The Weeknd crees que es la favorita de Mario? (O cuál debería ser.)"],
+  ["musica", "ligera", "adivinaM", "¿Qué canción de The Weeknd crees que es mi favorita? (O cuál debería ser.)"],
   ["musica", "ligera", "effie", "Juan Gabriel: ¿cuál es la canción que cantas a todo pulmón?", "juanga"],
-  ["musica", "ligera", "effie", "¿Qué trap has estado escuchando últimamente? Pásale uno a Mario.", "trap"],
+  ["musica", "ligera", "effie", "¿Qué trap has estado escuchando últimamente? Pásame uno.", "trap"],
   ["musica", "media", "effie", "¿Cómo llegaste al heels dance? ¿Qué sientes cuando te pones los tacones para bailar?", "heels"],
   ["musica", "ligera", "ambos", "¿Qué canción pones cuando necesitas sentirte imparable?"],
   ["musica", "profunda", "ambos", "¿Qué te da bailar (o la música) que no te da nada más?"],
   ["musica", "ligera", "ambos", "Si esta cita tuviera banda sonora, ¿qué tres canciones tendría?"],
   ["musica", "media", "ambos", "¿Qué canción te recuerda a una etapa que ya cerraste?"],
   ["musica", "ligera", "reto", "Cada uno manda por chat una canción sin explicar nada. Escuchen 30 segundos y adivinen por qué la eligió el otro."],
-  ["musica", "ligera", "reto", "Armen una playlist de cinco canciones para esta cita: dos de Effie, dos de Mario y una que elijan juntos."],
+  ["musica", "ligera", "reto", "Armen una playlist de cinco canciones para esta cita: dos tuyas, dos mías y una que elijamos juntos."],
+
+  // Hongos y caballos (naturaleza)
+  ["natura", "ligera", "effie", "¿Qué tienen los hongos que te encantan tanto? ¿Tienes uno favorito?"],
+  ["natura", "ligera", "effie", "¿Cuándo empezó tu amor por los caballos? ¿Has montado alguno?"],
+  ["natura", "ligera", "ambos", "Describe tu lugar ideal en la naturaleza: bosque, montaña, río… ¿Qué se escucha ahí?"],
+  ["natura", "ligera", "ambos", "Si pudieras pasar un fin de semana en cualquier lugar natural, ¿a dónde irías y qué harías?"],
+  ["natura", "media", "ambos", "¿Qué sientes en la naturaleza que no sientes en la ciudad?"],
+  ["natura", "profunda", "ambos", "¿Qué lugar natural te gustaría conocer con el otro algún día?"],
+  ["natura", "ligera", "adivinaE", "Si Effie fuera un hongo, ¿cuál sería y por qué?"],
+  ["natura", "ligera", "adivinaM", "Si yo fuera un caballo, ¿de qué color sería y cómo me llamaría?"],
+  ["natura", "ligera", "reto", "Armen en Habbo un rincón de bosque con hongos en 10 minutos. Gana el más bonito según el otro."],
 
   // Muy tauro
   ["tauro", "ligera", "effie", "Como buena tauro, ¿en qué eres terca y orgullosa de serlo?"],
-  ["tauro", "ligera", "mario", "¿Qué has aprendido de los tauro desde que conoces a Effie?"],
+  ["tauro", "ligera", "mario", "¿Qué has aprendido de los tauro desde que me conoces?"],
   ["tauro", "ligera", "ambos", "¿Qué cosa sencilla te da paz al instante? Una comida, un lugar, un olor…"],
   ["tauro", "ligera", "ambos", "¿Cuál es el pequeño lujo que nunca te niegas?"],
   ["tauro", "profunda", "ambos", "¿Qué necesitas de alguien para confiar de verdad?"],
-  ["tauro", "ligera", "adivinaM", "¿Qué rasgo de su signo crees que Mario tiene más marcado?"],
+  ["tauro", "ligera", "adivinaM", "¿Qué rasgo de mi signo crees que tengo más marcado?"],
 
   // Profe Effie
   ["aula", "media", "effie", "¿Qué das en la universidad y qué te llevó a la docencia?", "clase"],
   ["aula", "ligera", "effie", "¿Cuál es la anécdota más graciosa o más caótica con tus alumnos?"],
-  ["aula", "ligera", "adivinaM", "Si Mario fuera tu alumno, ¿qué calificación crees que sacaría? Justifícala."],
+  ["aula", "ligera", "adivinaM", "Si yo fuera tu alumno, ¿qué calificación sacaría? Justifícala."],
   ["aula", "ligera", "ambos", "¿De qué tema podrías dar una clase de una hora sin preparar nada?"],
   ["aula", "profunda", "ambos", "¿Qué aprendiste tarde que te habría gustado saber antes?"],
   ["aula", "media", "ambos", "¿Qué opinión tuya suele sorprender a la gente?"],
@@ -87,11 +98,11 @@ const RAW = [
   // Niebla y raíces
   ["hogar", "ligera", "effie", "¿Cómo llegó Niebla a tu vida y por qué se llama así?", "niebla"],
   ["hogar", "ligera", "effie", "¿Cuál es la manía más graciosa de Niebla?"],
-  ["hogar", "ligera", "reto", "Presenta a Niebla en cámara, o cuéntale a Mario la historia de su mejor foto."],
+  ["hogar", "ligera", "reto", "Presenta a Niebla en cámara, o cuéntame la historia de su mejor foto."],
   ["hogar", "media", "effie", "¿Qué te ha compartido tu papá de su lado libanés: comida, palabras, costumbres?", "libano"],
   ["hogar", "ligera", "ambos", "Pasta: ¿cuál sería tu plato perfecto? ¿Y quién hace la mejor lasaña que has probado?", "pasta"],
   ["hogar", "ligera", "adivinaE", "Si Effie pudiera comer una sola pasta el resto de su vida, ¿cuál sería?"],
-  ["hogar", "ligera", "mario", "¿Qué platillo te sale mejor? ¿Se lo cocinarías a Effie?"],
+  ["hogar", "ligera", "mario", "¿Qué platillo te sale mejor? ¿Me lo cocinarías?"],
   ["hogar", "media", "ambos", "¿Qué tradición de tu casa quieres conservar siempre?"],
   ["hogar", "media", "ambos", "¿A quién de tu familia te pareces más?"],
   ["hogar", "profunda", "ambos", "¿Qué significa hogar para ti?"],
@@ -103,7 +114,7 @@ const RAW = [
   ["gamer", "ligera", "ambos", "¿Te enojas cuando pierdes? Sin mentir."],
   ["gamer", "media", "ambos", "¿Algún juego te hizo llorar?"],
   ["gamer", "media", "ambos", "Si tu vida fuera un videojuego, ¿en qué nivel vas y qué jefe final te falta?"],
-  ["gamer", "ligera", "adivinaM", "¿A qué juego crees que Mario le ha dedicado más horas?"],
+  ["gamer", "ligera", "adivinaM", "¿A qué juego crees que le he dedicado más horas?"],
 
   // Un mes de nosotros
   ["nosotros", "ligera", "ambos", "¿Qué pensaste la primera vez que escuchaste la voz del otro en llamada?"],
@@ -120,60 +131,47 @@ const RAW = [
 ];
 
 export const Q = RAW.map((q, i) => ({ id: i, deck: q[0], level: q[1], type: q[2], text: q[3], key: q[4] || null }));
-export const idByKey = key => {
-  const q = Q.find(x => x.key === key);
-  return q ? q.id : null;
-};
 
 // ================= Ficha de Effie =================
 export const FICHA = [
   { title: "Música y baile", items: [
-    ["♪", "var(--blush)", <>Fan de <b>The Weeknd</b>. Ya fue a uno de sus conciertos.</>],
-    ["♫", "var(--blush)", <>Canta <b>Juan Gabriel</b>, y últimamente anda escuchando <b>trap</b>.</>],
-    ["↑", "var(--blush)", <>Hace <b>heels dance</b> (baile en tacones). Le encanta bailar.</>]
+    ["♪", "var(--blush)", <>Eres fan de <b>The Weeknd</b> y ya fuiste a uno de sus conciertos.</>],
+    ["♫", "var(--blush)", <>Cantas <b>Juan Gabriel</b>, y últimamente andas escuchando <b>trap</b>.</>],
+    ["↑", "var(--blush)", <>Haces <b>heels dance</b>, y bailar te encanta.</>]
+  ]},
+  { title: "Naturaleza", items: [
+    ["❀", "var(--moss)", <>Amas la <b>naturaleza</b>, muchísimo.</>],
+    ["♠", "var(--moss)", <>Te encantan los <b>hongos</b>.</>],
+    ["♞", "var(--moss)", <>Y los <b>caballos</b>.</>]
   ]},
   { title: "Lectura y cine", items: [
-    ["❦", "var(--mint)", <>Le gusta <b>leer</b>. Tenía un TikTok donde subía videos leyendo.</>],
-    ["✉", "var(--mint)", <>Su película favorita: <b>Orgullo y prejuicio</b> (2005). Hoy la ven juntos.</>]
+    ["❦", "var(--mint)", <>Te gusta <b>leer</b>. Tenías un TikTok donde subías videos leyendo.</>],
+    ["✉", "var(--mint)", <>Tu película favorita es <b>Orgullo y prejuicio</b> (2005). Hoy la vemos juntos.</>]
   ]},
   { title: "En el hotel", items: [
-    ["☆", "var(--lilac)", <>Muy <b>creativa</b>, y se nota en los looks de sus kekos.</>],
-    ["▦", "var(--lilac)", <>Le encanta <b>armar salas</b>.</>],
-    ["●", "var(--lilac)", <>Juego favorito: <b>Zana</b> o <b>kick moderno</b>.</>]
+    ["☆", "var(--lilac)", <>Eres muy <b>creativa</b>, y se nota en los looks de tus kekos.</>],
+    ["▦", "var(--lilac)", <>Te encanta <b>armar salas</b>.</>],
+    ["●", "var(--lilac)", <>Tu juego favorito: <b>Zana</b> o <b>kick moderno</b>.</>]
   ]},
-  { title: "Su vida", items: [
-    ["✎", "var(--sky)", <><b>Docente universitaria</b>.</>],
-    ["◕", "var(--peach)", <>Tiene a <b>Niebla</b>, su perrita de 8 años.</>],
-    ["▶", "var(--lilac)", <>Tiene consolas desde niña. Hoy: <b>Xbox Series S</b> y <b>Nintendo Switch</b>.</>],
-    ["✦", "var(--peach)", <>Su papá es <b>libanés</b>. Ella vive en <b>México</b>.</>],
-    ["◒", "var(--butter)", <>Ama las <b>pastas</b>, sobre todo la <b>lasaña</b>.</>]
+  { title: "Tu vida", items: [
+    ["✎", "var(--sky)", <>Eres <b>docente universitaria</b>.</>],
+    ["◕", "var(--peach)", <>Tienes a <b>Niebla</b>, tu perrita de 8 años.</>],
+    ["▶", "var(--lilac)", <>Tienes consolas desde niña. Hoy, una <b>Xbox Series S</b> y una <b>Nintendo Switch</b>.</>],
+    ["✦", "var(--peach)", <>Tu papá es <b>libanés</b>, y tú vives en <b>México</b>.</>],
+    ["◒", "var(--butter)", <>Amas las <b>pastas</b>, sobre todo la <b>lasaña</b>.</>]
   ]},
-  { title: "Cómo es", items: [
-    ["\u2649\uFE0E", "var(--butter)", <><b>Tauro</b>, y siempre lo aclara.</>],
-    ["◆", "var(--sky)", <>Muy <b>inteligente</b>. Lo dijo y es verdad.</>],
-    ["◐", "var(--butter)", <>Cuida mucho su <b>privacidad</b>.</>],
-    ["☏", "var(--blush)", <>Pueden pasar horas <b>hablando en llamada</b>.</>]
+  { title: "Cómo eres", items: [
+    ["\u2649\uFE0E", "var(--butter)", <>Eres <b>tauro</b>, y siempre lo aclaras.</>],
+    ["◆", "var(--sky)", <>Eres muy <b>inteligente</b>. Me lo dijiste y lo he comprobado.</>],
+    ["◐", "var(--butter)", <>Cuidas mucho tu <b>privacidad</b>.</>],
+    ["☏", "var(--blush)", <>Podemos pasar horas <b>hablando en llamada</b>.</>]
   ]}
 ];
 
 export const NICKS = ["mi amor", "mi niña", "bobito", "mi Mario", "te quiero"];
 
-export const DISCOVER = [
-  ["Por qué se llama .eff!e", "nombre"],
-  ["Su keko más icónico", "keko"],
-  ["Cómo vivió el concierto de The Weeknd", "weeknd"],
-  ["Su canción de Juan Gabriel", "juanga"],
-  ["Cómo empezó en el heels dance", "heels"],
-  ["Qué libros la atrapan", "generos"],
-  ["Qué enseña en la universidad", "clase"],
-  ["Lo libanés que le dejó su papá", "libano"],
-  ["La historia del nombre de Niebla", "niebla"],
-  ["Xbox o Switch: su veredicto", "consola"],
-  ["Su pasta perfecta", "pasta"]
-];
-
 export const PLAN = [
-  { title: "Orgullo y prejuicio", sub: "La versión de 2005, juntos" },
-  { title: "Un rato en Habbo", sub: "Con .eff!e en el hotel" },
-  { title: "Las cartas", sub: "Para conocerse más" }
+  { title: "Orgullo y prejuicio", sub: "Tu favorita, la de 2005" },
+  { title: "Un rato en Habbo", sub: "Tú y yo en el hotel" },
+  { title: "Las cartas", sub: "Para conocerte más" }
 ];

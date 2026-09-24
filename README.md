@@ -1,6 +1,6 @@
 # Cartas para Effie
 
-Juego de preguntas en React (Vite) para la primera cita de Effie y Mario. Los dos ven la misma carta en vivo y la página muestra el perfil público de `.eff!e` en Habbo (solo texto y colores, sin imágenes).
+Juego de preguntas en React (Vite) para la primera cita de Effie y Mario. Los dos ven la misma carta en vivo, y la página muestra el keko de `.eff!e.` con su misión, placas y salas, actualizado cada 20 segundos.
 
 ## Subirla a Vercel (unos 10 minutos)
 
@@ -26,11 +26,11 @@ Solo el número de carta, los mazos activos, las cartas marcadas para después y
 
 ## Habbo
 
-`/api/habbo` busca a `.eff!e` primero en habbo.es y luego en habbo.com. Si está en otro hotel, agrega en Vercel (*Settings → Environment Variables*) la variable `HABBO_HOTEL` con el dominio, por ejemplo `com.br`, y vuelve a desplegar. `HABBO_NAME` cambia el nombre buscado.
+`/api/habbo` busca a `.eff!e.` primero en habbo.es y luego en habbo.com. Si está en otro hotel, agrega en Vercel (*Settings → Environment Variables*) la variable `HABBO_HOTEL` con el dominio, por ejemplo `com.br`, y vuelve a desplegar. `HABBO_NAME` cambia el nombre buscado.
 
 ## Editar preguntas
 
-Todo el contenido está en `src/data.jsx`: preguntas, mazos, la ficha de Effie, los apodos y el plan de la cita.
+Todo el contenido está en `src/data.jsx`: preguntas, mazos, la ficha de Effie, los apodos y el plan de la cita. Los textos del encabezado y el pie están en `src/App.jsx`.
 
 ## En tu computadora
 

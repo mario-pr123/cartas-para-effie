@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState, useEffect } from "react";
-import { Q, DECKS, LEVELS, FICHA, NICKS, DISCOVER, PLAN, HIM, MET, idByKey } from "./data.jsx";
+import { Q, DECKS, LEVELS, FICHA, NICKS, PLAN, HIM, MET } from "./data.jsx";
 import { useSharedGame } from "./useSharedGame.js";
 import HabboCard from "./HabboCard.jsx";
 
@@ -127,21 +127,24 @@ export default function App() {
   const drawnBy = g.by === "effie" ? "Effie" : g.by === "mario" ? HIM : "";
 
   const statusText =
-    mode === "live" ? (other ? "Conectados: ven lo mismo en vivo." : "Esperando a que el otro abra la página…")
+    mode === "live"
+      ? (other ? "Estamos conectados: vemos lo mismo en vivo."
+        : role === "effie" ? `Esperando a ${HIM}…` : role === "mario" ? "Esperando a Effie…" : "Esperando al otro…")
     : mode === "loading" ? "Conectando…"
-    : "Solo en este dispositivo. Díganse el número de carta para ir a la par.";
+    : "Solo en este dispositivo. Dime el número de carta y vamos a la par.";
 
   return (
     <div className="app">
       <header>
         <div className="kicker">
-          <span className="tag px">Primera cita · en llamada</span>
+          <span className="tag px">Nuestra primera cita</span>
           <span className="px">Día {days} desde Habbo</span>
         </div>
         <h1>Cartas para <em>Effie</em></h1>
         <p className="lede">
-          Un mes de conversaciones en Habbo y en llamada. Cuando uno saca una carta, al otro le aparece la misma.
-          Respondan con calma y pasen las que no quieran contestar, sin dar explicaciones.
+          Effie, hace un mes te encontré en Habbo y desde entonces no hemos dejado de hablar. Hice esta página para conocerte
+          un poquito más en nuestra primera cita. Sacamos una carta a la vez y los dos vemos la misma. Si alguna no te late,
+          la pasamos sin explicar nada.
         </p>
 
         <div className="sync" role="status">
@@ -154,7 +157,7 @@ export default function App() {
 
         {!role ? (
           <div className="whoami">
-            <p>¿Quién está viendo la página?</p>
+            <p>¿Quién eres?</p>
             <div className="opts">
               <button className="small-btn" onClick={() => setRole("effie")}>Soy Effie</button>
               <button className="small-btn" onClick={() => setRole("mario")}>Soy {HIM}</button>
@@ -180,7 +183,7 @@ export default function App() {
         </ol>
       </header>
 
-      <div className="layout">
+      <div className="column">
         <main className="main">
           <section className="stage" id="mesa" aria-live="polite">
             {current ? (
@@ -217,12 +220,12 @@ export default function App() {
             ) : (
               <div className="empty">
                 <h2>Se acabó el mazo</h2>
-                <p>Jugaron todas las cartas de estos mazos. Pueden barajar otra vez o activar otros mazos y niveles.</p>
+                <p>Ya jugamos todas las cartas de estos mazos. Podemos barajar otra vez o activar otros mazos y niveles.</p>
                 <button className="btn primary" onClick={restart}>Barajar otra vez</button>
               </div>
             )}
             <div className="under">
-              <p className="note">{remaining.length} cartas por salir. Las respuestas no se guardan en ningún lado.</p>
+              <p className="note">{remaining.length} cartas por salir. Tus respuestas no se guardan en ningún lado.</p>
               <form className="jump" onSubmit={submitJump}>
                 <label htmlFor="jump-n">Ir a la carta #</label>
                 <input id="jump-n" type="number" inputMode="numeric" min="1" max={Q.length}
@@ -254,8 +257,8 @@ export default function App() {
 
           {g.sv.length > 0 && (
             <section className="saved">
-              <h2 className="block-title">Para la próxima llamada</h2>
-              <p className="muted">Las que marcaron para después.</p>
+              <h2 className="block-title">Para nuestra próxima llamada</h2>
+              <p className="muted">Las que dejamos para después.</p>
               <ul>
                 {g.sv.map(id => (
                   <li key={id} style={{ "--c": DECKS[Q[id].deck].color }}>
@@ -268,10 +271,10 @@ export default function App() {
           )}
         </main>
 
-        <aside className="aside">
-          <section className="ficha" aria-label="Lo que ya sé de Effie">
+        <div className="extras">
+          <section className="ficha" aria-label="Lo que ya sé de ti">
             <div className="ficha-head">
-              <span className="px">Lo que ya sé de</span>
+              <span className="px">Lo que ya sé de ti</span>
               <p className="ficha-name">Effie <em>{"\u2649\uFE0E"}</em></p>
             </div>
             <div className="stats">
@@ -298,18 +301,7 @@ export default function App() {
                 <h3>Así nos decimos</h3>
                 <div className="nicks">
                   {NICKS.map(n => <span key={n} className="nick">{n}</span>)}
-                  <span className="nick angry">Andreé <small>(si está enojada)</small></span>
-                </div>
-              </div>
-              <div className="group">
-                <h3>Por descubrir hoy</h3>
-                <div className="discover">
-                  {DISCOVER.map(([label, key]) => (
-                    <div className="disc-row" key={key}>
-                      <span>{label}<span className="qq">???</span></span>
-                      <button onClick={() => jumpTo(idByKey(key))}>Preguntar</button>
-                    </div>
-                  ))}
+                  <span className="nick angry">Andreé <small>(cuando te enojas)</small></span>
                 </div>
               </div>
             </div>
@@ -317,10 +309,13 @@ export default function App() {
           </section>
 
           <HabboCard />
-        </aside>
+        </div>
       </div>
 
-      <footer>Hecho por {HIM} para Effie. {Q.length} preguntas en {ALL_DECKS.length} mazos.</footer>
+      <footer>
+        <p>Hecho con mucho cariño por tu bobito, {HIM}. Para mi niña, en nuestra primera cita.</p>
+        <p className="sig">Te quiero, Effie.</p>
+      </footer>
     </div>
   );
 }

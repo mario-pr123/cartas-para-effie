@@ -7,12 +7,12 @@ export const MET = new Date(2026, 7, 24); // 24 de agosto de 2026, en Habbo
 
 export const DECKS = {
   peli:     { name: "Orgullo y prejuicio", color: "var(--mint)" },
-  habbo:    { name: "Hotel Habbo",         color: "var(--lilac)" },
-  musica:   { name: "Música y tacones",    color: "var(--blush)" },
-  natura:   { name: "Hongos y caballos",   color: "var(--moss)" },
-  tauro:    { name: "Muy tauro",           color: "var(--butter)" },
-  aula:     { name: "Profe Effie",         color: "var(--sky)" },
-  hogar:    { name: "Niebla y raíces",     color: "var(--peach)" },
+  habbo:    { name: "Habbo",         color: "var(--lilac)" },
+  musica:   { name: "Música",    color: "var(--blush)" },
+  natura:   { name: "Naturaleza",   color: "var(--moss)" },
+  tauro:    { name: "Taurina xd",           color: "var(--butter)" },
+  aula:     { name: "Teacher Effie",         color: "var(--sky)" },
+  hogar:    { name: "Raíces",     color: "var(--peach)" },
   gamer:    { name: "Player 2",            color: "var(--lilac)" },
   nosotros: { name: "Un mes de nosotros",  color: "var(--blush)" }
 };

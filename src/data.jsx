@@ -151,20 +151,20 @@ export const FICHA = [
   { title: "En el hotel", items: [
     ["☆", "var(--lilac)", <>Eres muy <b>creativa</b>, y se nota en los looks de tus kekos.</>],
     ["▦", "var(--lilac)", <>Te encanta <b>armar salas</b>.</>],
-    ["●", "var(--lilac)", <>Tu juego favorito: <b>Zana</b> o <b>kick moderno</b>.</>]
+    ["●", "var(--lilac)", <>Tu juego favorito: <b>Zanita xd</b>.</>]
   ]},
   { title: "Tu vida", items: [
     ["✎", "var(--sky)", <>Eres <b>docente universitaria</b>.</>],
     ["◕", "var(--peach)", <>Tienes a <b>Niebla</b>, tu perrita de 8 años.</>],
-    ["▶", "var(--lilac)", <>Tienes consolas desde niña. Hoy, una <b>Xbox Series S</b> y una <b>Nintendo Switch</b>.</>],
+    ["▶", "var(--lilac)", <>Tienes VARIAS consolas xd. La <b>Xbox Series S</b> que no me gusta jeje y ahorita conectada tu <b>Nintendo Switch</b>.</>],
     ["✦", "var(--peach)", <>Tu papá es <b>libanés</b>, y tú vives en <b>México</b>.</>],
-    ["◒", "var(--butter)", <>Amas las <b>pastas</b>, sobre todo la <b>lasaña</b>.</>]
+    ["◒", "var(--butter)", <>Amas las <b>pastas</b>.</>]
   ]},
   { title: "Cómo eres", items: [
-    ["\u2649\uFE0E", "var(--butter)", <>Eres <b>tauro</b>, y siempre lo aclaras.</>],
-    ["◆", "var(--sky)", <>Eres muy <b>inteligente</b>. Me lo dijiste y lo he comprobado.</>],
+    ["\u2649\uFE0E", "var(--butter)", <>Eres <b>tauro</b>, y siempre lo declaras con gusto y orgullo.</>],
+    ["◆", "var(--sky)", <>Eres muy <b>inteligente</b>. Lo he comprobado aunque tengo que corregirte a veces con tu escritura xD.</>],
     ["◐", "var(--butter)", <>Cuidas mucho tu <b>privacidad</b>.</>],
-    ["☏", "var(--blush)", <>Podemos pasar horas <b>hablando en llamada</b>.</>]
+    ["☏", "var(--blush)", <>Podemos pasar horas y horas <b>hablando en llamada</b>.</>]
   ]}
 ];
 

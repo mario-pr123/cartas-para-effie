@@ -1,6 +1,6 @@
 // Perfil público de Habbo, leído desde el servidor (evita problemas de CORS).
 // Devuelve solo texto y colores: nada de imágenes del avatar.
-const NAME = process.env.HABBO_NAME || ".eff!e";
+const NAME = process.env.HABBO_NAME || ".eff!e.";
 const HOTELS = (process.env.HABBO_HOTEL || "es,com").split(",").map(s => s.trim()).filter(Boolean);
 const UA = { "User-Agent": "Mozilla/5.0 (cartas-para-effie)" , Accept: "application/json" };
 

@@ -140,7 +140,7 @@ export default function App() {
         </div>
         <h1>Cartas para <em>Effie</em></h1>
         <p className="lede">
-          Un mes de conversaciones en Habbo y en llamada. Abran esta página los dos al mismo tiempo: cuando uno saca una carta, al otro le aparece la misma.
+          Un mes de conversaciones en Habbo y en llamada. Cuando uno saca una carta, al otro le aparece la misma.
           Respondan con calma y pasen las que no quieran contestar, sin dar explicaciones.
         </p>
 

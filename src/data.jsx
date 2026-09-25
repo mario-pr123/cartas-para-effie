@@ -164,7 +164,7 @@ export const FICHA = [
     ["\u2649\uFE0E", "var(--butter)", <>Eres <b>tauro</b>, y siempre lo aclaras.</>],
     ["◆", "var(--sky)", <>Eres muy <b>inteligente</b>. Lo he comprobado aunque tengo que corregirte a veces con tu escritura xD.</>],
     ["◐", "var(--butter)", <>Cuidas mucho tu <b>privacidad</b>.</>],
-    ["☏", "var(--blush)", <>Podemos pasar horas y horas<b>hablando en llamada</b>.</>]
+    ["☏", "var(--blush)", <>Podemos pasar horas y horas<b> hablando en llamada</b>.</>]
   ]}
 ];
 
